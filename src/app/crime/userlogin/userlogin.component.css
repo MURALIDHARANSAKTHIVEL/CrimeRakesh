@@ -1,0 +1,165 @@
+#s1{
+    float: left;
+    width: 20%;   
+   height: 75vh;
+    
+}
+
+#s7{
+    margin-left: 100px;
+    color:#274d8a;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;   
+}
+
+#s8{
+    color: red;
+}
+table tr td,th {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+
+#s6{
+    text-align: center;
+}
+
+label{
+    width:20%;
+    display: inline-block;
+    color:#274d8a;
+    font-weight: bold;
+    margin-left: 50px;
+}
+#i4{
+    height:20px;
+    width: 20px;
+}
+
+#i5{
+    height: 75px;
+    width: 75px;
+}
+#s9{
+    height: 75px;
+}
+
+#i1{
+    height: 400px;
+    width: 1000px;
+}
+
+ngb-rating{
+    font-size: 25px;
+}
+@media only screen and (max-width: 768px) {
+    #s1 button{
+        width: 100px;
+    }
+  }
+
+  body{
+    font-family: "Lato", sans-serif;
+}
+
+.card-img-top{
+    height: 400px;
+}
+  
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top:0;
+    background-color: slategrey;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+ 
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: green;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .carousel-item img{
+    height: 500px;
+    width:100%; 
+    
+  }
+
+  .container{
+      margin-left: 0;
+      margin-right: 0;
+  }
+  .row
+  {
+      margin-left: 0;
+      margin-right: 0;
+  }
+
+  i{
+    color:#274d8a;
+  }
+
+
+  .card-group h5{
+      text-align: center;
+      padding: 10px;
+  }
+  .card-group .card{
+      margin: 10px;
+  }
+
+
+  .example-container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+
+
+  #q1{
+      height: 75px;
+      width: 75px;
+      border-radius: 15px;
+  }
+
+  #profile-input{
+      display: none;
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+  

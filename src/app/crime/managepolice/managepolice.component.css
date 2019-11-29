@@ -1,0 +1,18 @@
+label{
+    width:30%;
+    display: inline-block;
+    
+    font-weight: bold;
+}
+
+#s1{
+    color:#274d8a;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+#s2{
+    margin-left: 20px;
+}
+

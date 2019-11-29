@@ -1,0 +1,84 @@
+<select style="text-align:center;">
+    <option class="btn btn-warning text-danger font-weight-bold" (click)="addpolice()">Add Police Member</option>
+    <option class="ml-5 btn btn-warning text-danger font-weight-bold" (click)="deletepolice()">Delete Police Member</option>
+   
+</select>
+
+
+<div id="s2" [hidden]="hideaddform">
+<form  [formGroup]="policeform" ><br><br>
+    <h2 id="s1">Add Police</h2>
+    <div>
+    <label>Name:</label><input type="text" formControlName="name" placeholder="Enter the Name"></div><br><br>
+        <div>
+    <label>Police Id:</label><input type="text" formControlName="policeid" placeholder="Enter Police id">
+    <div *ngIf="(policeform.controls.username.invalid || policeform.controls.username.untouched)" class="text-danger">
+    <div *ngIf="policeform.controls.username.errors?.required" >Id is Required</div></div>
+</div><br><br>
+    <div>
+        <label>User Name:</label><input type="text" formControlName="username" placeholder="Enter UserName">
+        <div *ngIf="(policeform.controls.username.invalid || policeform.controls.username.untouched)" class="text-danger">
+            <div *ngIf="policeform.controls.username.errors?.required">Name is Required</div>
+            <div *ngIf="policeform.controls.username.errors?.minlength">Length must be at least 8 characters
+                long.</div>
+            <div *ngIf="policeform.controls.username.errors?.maxlength">Length is more than 12 characters
+                long.
+            </div>
+            <div *ngIf="policeform.controls.username.errors?.pattern">Only Alphabets should be Given</div>
+        </div>
+    </div><br><br>
+    <div>
+        <label>
+            Password:</label><input type="password" formControlName="password" placeholder="Enter Password">
+        <div *ngIf="(policeform.controls.password.invalid || policeform.controls.password.untouched)" class="text-danger">
+            <div *ngIf="policeform.controls.password.errors?.required">Password is Required</div>
+            <div *ngIf="policeform.controls.password.errors?.minlength">Length must be at least 4 characters
+                long.</div>
+            <div *ngIf="policeform.controls.password.errors?.pattern">One UpperCase One LowerCase And One
+                Number
+                Should Be Given</div>
+            <br><br>
+        </div>
+    </div>
+    <div>
+        <label>
+            Phone Number:</label><input type="text" formControlName="phonenumber" placeholder="Enter Phone Number"
+            maxlength="10" (keypress)="keyPress($event)">
+        <div *ngIf="(policeform.controls.phonenumber.invalid || policeform.controls.phonenumber.untouched)" class="text-danger">
+            <div *ngIf="policeform.controls.phonenumber.errors?.required">Phone Number is Required</div>
+            <div *ngIf="policeform.controls.phonenumber.errors?.minlength">Length must be at least 10 characters
+                long.</div>
+            <div *ngIf="policeform.controls.phonenumber.errors?.maxlength">Length should 10 characters
+                long.</div>
+            <div *ngIf="policeform.controls.phonenumber.errors?.pattern">Only Numbers Should be GIven</div>
+            <br><br>
+        </div>
+    </div>
+    <div>
+        <label>
+            Email:</label><input type="email" formControlName="email" placeholder="Enter the Email">
+        <div *ngIf="(policeform.controls.email.invalid || policeform.controls.email.untouched)" class="text-danger">
+            <div *ngIf="policeform.controls.email.errors?.required">Email is Required</div>
+            <div *ngIf="policeform.controls.email.errors?.pattern">Email Formant is Invalid</div>
+            <br><br>
+        </div>
+    </div>
+
+    <label>
+        Address:</label><input type="text" formControlName="address1" placeholder="Enter the Address"><br>
+    <label></label><input type="text" formControlName="city" placeholder="City"><br>
+    <label></label><input type="text" formControlName="state" placeholder="State"><br>
+    <label></label><input type="text" formControlName="country" placeholder="Country"><br>
+    <label></label><input type="text" formControlName="pincode" placeholder="Pin Code"><br>
+
+    <br><br><button (click)="addpolicesubmit()" class="w-25 btn btn-danger">Add Police to List</button>
+    
+</form><br>
+</div>
+
+<div [hidden]="hidedeleteform">
+<br><br><form [formGroup]="deleteform">
+    <label>Police id:</label><input type="text" formControlName="policeid" placeholder="Enter the Id">
+    <br><br><button (click)="deletepolice()" class="w-25 btn btn-danger text-center">Delete Police Id</button>
+</form></div>
+<router-outlet></router-outlet>

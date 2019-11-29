@@ -1,0 +1,470 @@
+<ng-template #content let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-title">Record Inserted Successfully</h4>
+            <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <img src="../assets/images/checked.png" class="h-25 w-25" alt="Correct">
+            <p>Police Succesfully Added</p>
+        </div>
+    </ng-template>
+<ng-template #content1 let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">Deleted Successfully</h4>
+        <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <img src="../assets/images/checked.png" class="h-25 w-25" alt="Correct">
+        <p>Police Record Succesfully Deleted</p>
+    </div>
+</ng-template>
+<ng-template #policeassign let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">Successfully Added</h4>
+        <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <img src="../assets/images/checked.png" class="h-25 w-25" alt="Correct">
+        
+    </div>
+</ng-template>
+<ng-template #logoutcontent let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">Login Form</h4>
+        <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <!-- <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title" style="font-weight:bolder">Your action prompt</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div> -->
+    <div class="modal-body">
+        <p><strong>Are you sure you want to Logout?</strong></p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="logout1()">Ok</button>
+    </div>
+</ng-template>
+
+<header id="s2" class="bg-success"></header>
+
+<body>
+    <div class="container" style="margin-right:0em; margin-left:0em;">
+        <div class="row">
+            <div id="s1" class="col-1">
+                <div id="mySidenav" class="sidenav">
+                    <a class="closebtn text-white" onclick="closeNav()">&times;</a>
+                    <button class="mb-2 mr-5 btn font-weight-bold text-white" (click)="home()">Home</button>
+                    <button class="mb-2 mr-5 btn font-weight-bold text-white" (click)="opencomplaintform()">New
+                        Complaint</button>
+                    <button class="mb-2 mr-5 btn font-weight-bold text-white" (click)="openmanagepolice()">Manage
+                        Police</button>
+                    <button class="mb-2 mr-5 btn font-weight-bold text-white" (click)="managecases()">Manage Cases</button>
+                    <button class="mb-2 mr-5 btn font-weight-bold text-white" (click)="managemissing()">Manage Missing</button>
+                    <!-- <button class="mb-2 mr-5 btn font-weight-bold text-white" (click)="managewanted()">Manage Wanted</button> -->
+                    <button class="mb-2 mr-5 btn font-weight-bold text-white" (click)="managewanted()">Manage Wanted</button>
+                    <button class="mb-2 mr-5 btn font-weight-bold text-white" (click)="openfeedbacks()">Feedback<br>
+                        Management</button>
+                    <button class="mb-2 mr-5 btn font-weight-bold text-white" (click)="logout(logoutcontent)">Logout</button>
+                </div>
+                <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+            </div>
+            <!-- new initiatives -->
+            <div class="col-11">
+                <div class="row" [hidden]="hideimage">
+                    <div class="col-4">
+                        <h4 id="s4">New Initiatives</h4>
+                        <div class="carousel slide" data-ride="carousel" data-interval="2000">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block " src="../../assets/images/20.jpg" alt="First slide">
+                                    <p>Hon’ble Chief Minister of TN launched State wide E-challan system on 28.06.2019
+                                        at
+                                        the
+                                        Secretariat</p>
+                                </div>
+                                <div class="carousel-item ">
+                                    <img class="d-block" src="../../assets/images/21.jpg" alt="Third slide">
+                                    the Honorable CM of Tamil Nadu, launched 40 Amma Patrol Vehicles on 26.08.2019 at
+                                    Secretariat, Chennai.
+
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="../../assets/images/22.jpg" alt="Second slide">
+                                    the Chennai City CoP launched an online facility for getting Police Verification
+                                    Certificate on 09.01.2019.
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <img id="s8" class="img-fluid" src="/assets/images/we.jpg">
+                    </div>
+                    <div class="col-3">
+                        <h4 id="s4">Events</h4>
+                        <div class="carousel slide" data-ride="carousel" data-interval="3000">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block " src="../../assets/images/23.png" alt="First slide">
+                                    Passing out parade of 228 Sub - Inspectors of Technical Services and 179 Sub -
+                                    Inspectors of Finger Print was held in the presence of Thiru J. K. Tripathy, IPS,
+                                    Director General of Police
+                                </div>
+                                <div class="carousel-item ">
+                                    <img class="d-block" src="../../assets/images/24.jpg" alt="Third slide">
+                                    Inauguration of body worn cameras for Traffic Police by Thiru Sumit Sharan, IPS,
+                                    COP, Coimbatore City on 17.07.2019. 70 body worn cameras were distributed to the
+                                    Traffic Police Personnel of Coimbatore City
+
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="../../assets/images/25.jpg" alt="Second slide">
+                                    Dr. A. Amalraj I.P.S., Commissioner of Police, Trichy City distributed helmets for
+                                    200 beat Police personnel in Trichy City on 22.08.19.<br><br><br>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- complaintform -->
+                <div [hidden]="hideform">
+                    <h2 id="s3">Complaint Form</h2><br><br>
+                    <form [formGroup]="complaintform">
+                        <label>User Name</label>
+                        <i class="mr-1 fa fa-user"></i><input type="text" formControlName="username" placeholder="Enter UserName"><br><br>
+                        <label>Culprit Name</label>
+                        <i class="mr-1 fa fa-pencil"></i><input type="text" formControlName="culpritname" placeholder="Enter Culprit Name"><br><br>
+                        <label>Case Name</label>
+                        <i class="mr-1 fa fa-pencil"></i><input type="text" formControlName="casename" placeholder="Enter Case Name"><br><br>
+                        <label>Date</label>
+                        <i class="mr-1 fa fa-calendar"></i><input type="date" formControlName="date" placeholder="Enter the date"><br><br>
+                        <label>Incident Location</label>
+                        <i class="mr-1 fa fa-map-marker"></i><input type="text" formControlName="location" placeholder="Enter the Location"><br><br>
+                        <!-- <label>Status:</label><input type="text" formControlName="status" placeholder="Enter the Status"><br><br> -->
+                        <label>Remarks:</label>
+                        <i class="mr-1 fa fa-comment"></i><textarea type="text" formControlName="remarks" placeholder="Enter Remembered Remarks"></textarea><br><br>
+                        <label>Image/Video</label>
+                        <i class="mr-1 fa fa-picture-o"></i>&nbsp;&nbsp;<input type="file" (change)="image($event)"
+                            accept="image/*"><br><br>
+                        <button class="w-75 btn btn-info" (click)="imagesave(complaintcontent)">Register Complaint</button>
+                        <p>Note*- If you Fill the Details the Below Button will Enable</p>
+                        <br><button class="mt-3 btn btn-warning text-danger" [disabled]="disable1" (click)="getData()">Complaint
+                            Details</button>
+                    </form>
+
+                </div>
+
+                <!-- caseentereddetails -->
+                <div [hidden]="hideform3" style="margin-top:5em">
+                    <label style="font-size: 2em;color:blue"><u>Entered Details</u></label>
+                    <table>
+                        <tr>
+                            <th>Id:</th>
+                            <th>UserName:</th>
+                            <th>Culprit Name:</th>
+                            <th>CaseName:</th>
+                            <th>Location</th>
+                            <th>Image:</th>
+                            <th>Remarks:</th>
+                        </tr>
+                        <tr *ngFor="let data of imagedata">
+                            <td>{{data.id}}</td>
+                            <td>{{data.username}}</td>
+                            <td>{{data.culpritname}}</td>
+                            <td>{{data.casename}}</td>
+                            <td>{{data.location}}</td>
+                            <td><img [src]="fetchimage(data.image)" /></td>
+                            <td>{{data.remarks}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+
+                <!-- managepolice -->
+                <div>
+                    <div [hidden]="hidebuttons" id="i1">
+                        <button class="btn btn-info text-white font-weight-bold" (click)="addpolice()">Add Police
+                            Member</button>
+                        <button class="ml-5 btn btn-info text-white font-weight-bold" (click)="deletepolice()">Delete
+                            Police Member</button>
+
+                    </div>
+
+                <!-- addpolice -->
+                    <div id="s5" [hidden]="hideaddform">
+                        <form [formGroup]="policeform"><br><br>
+                            <h2 id="s4">Add Police</h2>
+                            <div>
+                                <label>Name:</label>
+                                <i class="mr-2 fa fa-user"></i><input type="text" formControlName="name" placeholder="Enter the Name">
+                            </div><br><br>
+                            <div>
+                                <label>Police Id</label>
+                                <i class="mr-2 fa fa-id-badge"></i><input type="text" formControlName="policeid"
+                                    placeholder="Enter Police id">
+                                <div *ngIf="(policeform.controls.username.invalid && policeform.controls.username.touched)"
+                                    class="text-danger">
+                                    <div *ngIf="policeform.controls.username.errors?.required">Id is Required</div>
+                                </div>
+                            </div><br><br>
+                            <div>
+                                <label>User Name</label>
+                                <i class="mr-2 fa fa-user"></i><input type="text" formControlName="username"
+                                    placeholder="Enter UserName">
+                                <div *ngIf="(policeform.controls.username.invalid && policeform.controls.username.touched)"
+                                    class="text-danger">
+                                    <div *ngIf="policeform.controls.username.errors?.required">Name is Required</div>
+                                    <div *ngIf="policeform.controls.username.errors?.minlength">Length must be at least
+                                        8
+                                        characters
+                                        long.</div>
+                                    <div *ngIf="policeform.controls.username.errors?.maxlength">Length is more than 12
+                                        characters
+                                        long.
+                                    </div>
+                                    <div *ngIf="policeform.controls.username.errors?.pattern">Only Alphabets should be
+                                        Given</div>
+                                </div>
+                            </div><br><br>
+                            <div>
+                                <label>
+                                    Password</label>
+                                <i class="mr-2 fa fa-pencil"></i><input type="password" formControlName="password"
+                                    placeholder="Enter Password">
+                                <div *ngIf="(policeform.controls.password.invalid && policeform.controls.password.touched)"
+                                    class="text-danger">
+                                    <div *ngIf="policeform.controls.password.errors?.required">Password is Required</div>
+                                    <div *ngIf="policeform.controls.password.errors?.minlength">Length must be at least
+                                        4
+                                        characters
+                                        long.</div>
+                                    <div *ngIf="policeform.controls.password.errors?.pattern">One UpperCase One
+                                        LowerCase
+                                        And
+                                        One
+                                        Number
+                                        Should Be Given</div>
+                                    <br><br>
+                                </div>
+                            </div>
+                            <div>
+                                <label>
+                                    Phone Number</label>
+                                <i class="mr-2 fa fa-phone"></i><input type="text" formControlName="phonenumber"
+                                    placeholder="Enter Phone Number" maxlength="10" (keypress)="keyPress($event)">
+                                <div *ngIf="(policeform.controls.phonenumber.invalid && policeform.controls.phonenumber.touched)"
+                                    class="text-danger">
+                                    <div *ngIf="policeform.controls.phonenumber.errors?.required">Phone Number is
+                                        Required</div>
+                                    <div *ngIf="policeform.controls.phonenumber.errors?.minlength">Length must be at
+                                        least
+                                        10
+                                        characters
+                                        long.</div>
+                                    <div *ngIf="policeform.controls.phonenumber.errors?.maxlength">Length should 10
+                                        characters
+                                        long.</div>
+                                    
+                                    <br><br>
+                                </div>
+                            </div>
+                            <div>
+                                <label>
+                                    Email</label>
+                                <i class="mr-2 fa fa-envelope-o"></i><input type="email" formControlName="email"
+                                    placeholder="Enter the Email">
+                                <div *ngIf="(policeform.controls.email.invalid && policeform.controls.email.touched)"
+                                    class="text-danger">
+                                    <div *ngIf="policeform.controls.email.errors?.required">Email is Required</div>
+                                    <div *ngIf="policeform.controls.email.errors?.pattern">Email Formant is Invalid</div>
+                                    <br><br>
+                                </div>
+                            </div>
+
+                            <label>
+                                Address</label>
+                            <i class="mr-2 fa fa-address-card"></i><input type="text" formControlName="address"
+                                placeholder="Enter the Address"><br>
+                            <label></label><input type="text" formControlName="city" placeholder="City"><br>
+                            <label></label><input type="text" formControlName="state" placeholder="State"><br>
+                            <label></label><input type="text" formControlName="country" placeholder="Country"><br>
+                            <label></label><input type="text" formControlName="pincode" placeholder="Pin Code"><br>
+
+                            <br><br><button (click)="addpolicesubmit(content)" class="w-25 btn btn-info">Add Police
+                                to
+                                List</button>
+
+                        </form><br>
+                    </div>
+                <!-- deletepolice -->
+                    <div [hidden]="hidedeleteform">
+                        <br><br>
+                        <form id="s6" [formGroup]="deleteform">
+                            <label>Police id:</label>
+                            <i class="mr-2 fa fa-id-badge"></i><input type="text" formControlName="policeid"
+                                placeholder="Enter the Id">
+                            <br><br><button (click)="deletepolicesubmit(content1)" class="w-25 btn btn-info">Delete
+                                Police Id</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- manageCases -->
+                <div [hidden]="hidecases" class="text-align-center">
+                    <form [formGroup]="casesform">
+                        <div>
+                            <table>
+                                <tr class="bg-info">
+                                    <th>Id</th>
+                                    <th>UserName</th>
+                                    <th>CulpritName</th>
+                                    <th>CaseName</th>
+                                    <th>Date</th>
+                                    <th>Location</th>
+                                    <th>Remarks</th>
+                                    <th>Image</th>
+                                    <th>Status</th>
+                                    <th>Assigned To</th>
+                                    <th>Activity</th>
+                                    <th>Remove</th>
+                                </tr>
+
+                                <tr *ngFor="let data of casesdata">
+                                    <td>{{data.id}}</td>
+                                    <td>{{data.username}}</td>
+                                    <td>{{data.culpritname}}</td>
+                                    <td>{{data.casename}}</td>
+                                    <td>{{data.date}}</td>
+                                    <td>{{data.location}}</td>
+                                    <td>{{data.remarks}}</td>
+                                    <td><img id="i3" [src]="fetchimage(data.image)" /></td>
+                                    <td><input type="text" disabled value="{{data.status}}"></td>
+                                    <td><input type="text" formControlName="assignedto" value="{{data.assignedto}}"></td>
+                                    <td><button (click)="policeassigned(data,policeassign)" [disabled]="data.hideupdatebutton" class="btn btn-info">Update</button></td>
+                                    <td><button (click)="removecase(data)" class="btn btn-info" [disabled]="data.hideremovebutton">Remove</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- managemissing or wanted -->
+                <div class="ml-5 mt-5">
+                    <div [hidden]="hidemissing">
+                        <div>
+                            <button type="button" (click)="addmissing()" class="mb-3 font-weight-bold btn btn-success">Add
+                                Missing Members</button>
+                        </div>
+                        <div [hidden]="hidemissingaddform" id="i4">
+                            <form [formGroup]="addmissingform">
+                                <label>Image/Video</label>
+                                <i class="mr-1 fa fa-picture-o"></i>&nbsp;&nbsp;<input type="file" (change)="image($event)"
+                                    accept="image/*"><br><br>
+                                <label>Id</label>
+                                <i class="mr-1 fa fa-id-badge"></i><input type="text" formControlName="id" placeholder="Enter Id"><br><br>
+                                <label>User Name</label>
+                                <i class="mr-1 fa fa-user"></i><input type="text" formControlName="name" placeholder="Enter UserName"><br><br>
+                                <label>Contact Number</label>
+                                <i class="mr-1 fa fa-phone"></i><input type="text" formControlName="contactno"
+                                    placeholder="Enter Contact Number"><br><br>
+                                <button type="button" (click)="addmissingdata(policeassign)" class="btn btn-success">Add Member</button>
+                                <button type="button" (click)="openmiss()" class="ml-2 btn btn-success">Go Back</button>
+                            </form>
+                        </div>
+                        <table class="table table-striped table-active table-hover">
+                            <tr>
+                                <th>Image</th>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>ContactNo</th>
+                                <th>Remove</th>
+                            </tr>
+                            <tbody>
+                                <tr *ngFor="let data of managemissing1">
+                                    <td><img class="h-100 w-150" [src]="fetchimage(data.image)" /></td>
+                                    <td>{{data.id}}</td>
+                                    <td>{{data.name}}</td>
+                                    <td>{{data.contactno}}</td>
+                                    <td><button (click)="removemissing(data)" class="btn btn-success">Remove</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+
+                <!-- managewanted -->
+                <div [hidden]="hidewanted">
+                    <div>
+                        <button type="button" (click)="addwanted()" class="mb-3 font-weight-bold btn btn-success">Add
+                            Most Wanted Members</button>
+                    </div>
+                    <div [hidden]="hidewantedaddform" id="i4">
+                        <form [formGroup]="addwantedform">
+                            <label>Image/Video</label>
+                            <i class="mr-1 fa fa-picture-o"></i><input type="file" (change)="image($event)" accept="image/*"><br><br>
+                            <label>User Name</label>
+                            <i class="mr-1 fa fa-user"></i><input type="text" formControlName="name" placeholder="Enter UserName"><br><br>
+                            <button type="button" (click)="addwanteddata(policeassign)" class="btn btn-success">Add Member</button>
+                            <button type="button" (click)="openwant()" class="ml-2 btn btn-success">Go Back</button>
+                        </form>
+                    </div>
+                    <table class="table table-striped table-active table-hover">
+                        <tr>
+                            <th>Id</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Remove</th>
+
+                        </tr>
+                        <tbody>
+                            <tr *ngFor="let data of managewanted1">
+                                <td>{{data.id}}</td>
+                                <td><img class="h-100 w-150" [src]="fetchimage(data.image)" /></td>
+                                <td>{{data.name}}</td>
+                                <td><button (click)="removewanted(data.name)" class="btn btn-success">Remove</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- feedback -->
+                <div [hidden]="hidefeedback">
+                    <table class="table table-striped table-active table-hover">
+                        <tr>
+                            <th>Id</th>
+                            <th>Username</th>
+                            <th>Feedback</th>
+                            <th>ReceivedBy</th>
+                            <th>Rating</th>
+                        </tr>
+                        <tbody>
+                            <tr *ngFor="let data of feedbackdata">
+                                <td>{{data.id}}</td>
+                                <td>{{data.username1}}</td>
+                                <td>{{data.matter}}</td>
+                                <td>{{data.receivedby}}</td>
+                                <td>{{data.rating}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<router-outlet></router-outlet>

@@ -1,0 +1,118 @@
+<ng-template #register let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-title">Registration Successfull</h4>
+            <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <img src="../assets/images/checked.png" class="h-25 w-25" alt="Correct">
+            <p><strong>Enjoy the Features of Crime Management</strong></p>
+        </div>
+    </ng-template>
+
+<header id="s4" class="bg-success"></header>
+<body>
+<div class="container" >
+    <div id="i1" class="mb-5 mt-5"><br><br>
+        <h2 id="s3">Registeration Form</h2><br><br>
+
+        <form  [formGroup]="registerform">
+            <div>
+                <label>User Name</label><i class="mr-2 fa fa-user"></i><input type="text" formControlName="username" placeholder="Enter UserName">
+                <div *ngIf="(registerform.controls.username.invalid && registerform.controls.username.touched)" class="text-danger">
+                    <div *ngIf="registerform.controls.username.errors?.required">Name is Required</div>
+                    <div *ngIf="registerform.controls.username.errors?.minlength">Length must be at least 8 characters
+                        long.</div>
+                    <div *ngIf="registerform.controls.username.errors?.maxlength">Length is more than 12 characters
+                        long.
+                    </div>
+                    <div *ngIf="registerform.controls.username.errors?.pattern">Only Alphabets should be Given</div>
+                </div>
+            </div><br><br>
+            <div>
+                <label>
+                    Password</label><i class="mr-2 fa fa-pencil"></i><input type="password" formControlName="password" placeholder="Enter Password">
+                <div *ngIf="(registerform.controls.password.invalid && registerform.controls.password.touched)" class="text-danger">
+                    <div *ngIf="registerform.controls.password.errors?.required">Password is Required</div>
+                    <div *ngIf="registerform.controls.password.errors?.minlength">Length must be at least 4 characters
+                        long.</div>
+                    <div *ngIf="registerform.controls.password.errors?.pattern">One UpperCase One LowerCase And One
+                        Number
+                        Should Be Given</div>
+                    <br><br>
+                </div>
+            </div>
+            <div>
+                <label>
+                    Phone Number</label><i class="mr-2 fa fa-phone"></i><input type="text" formControlName="phonenumber" placeholder="Enter Phone Number" maxlength="10" (keypress)="keyPress($event)" >
+                <div *ngIf="(registerform.controls.phonenumber.invalid && registerform.controls.phonenumber.touched)" class="text-danger">
+                    <div *ngIf="registerform.controls.phonenumber.errors?.required">Phone Number is Required</div>
+                    <div *ngIf="registerform.controls.phonenumber.errors?.minlength">Length must be at least 10 characters
+                        long.</div>
+                    <div *ngIf="registerform.controls.phonenumber.errors?.maxlength">Length should 10 characters
+                        long.</div>
+                    <div *ngIf="registerform.controls.phonenumber.errors?.pattern">Only Numbers Should be GIven</div>
+                    <br><br>
+                </div>
+            </div>
+            <div>
+                <label>
+                    Email</label><i class="mr-2 fa fa-envelope-o"></i><input type="email" formControlName="email" placeholder="Enter the Email">
+                <div *ngIf="(registerform.controls.email.invalid && registerform.controls.email.touched)" class="text-danger">
+                    <div *ngIf="registerform.controls.email.errors?.required">Email is Required</div>
+                    <div *ngIf="registerform.controls.email.errors?.pattern">Email Formant is Invalid</div>
+                    <br><br>
+                </div>
+            </div>
+           
+                <label>
+                    Address</label><i class="mr-2 fa fa-address-book"></i><input type="text" formControlName="address1" placeholder="Enter the Address"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label></label><input type="text" formControlName="city" placeholder="City"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label></label><input type="text" formControlName="state" placeholder="State"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label></label><input type="text" formControlName="country" placeholder="Country"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label></label><input type="text" formControlName="pincode" placeholder="Pin Code"><br>
+        
+            
+                    <br><br >
+            <div [hidden]="hideadmin">
+                <div>
+                    <label>Admin-User Name</label><i class="mr-2 fa fa-user"></i><input type="text" formControlName="adminusername">
+                    <div *ngIf="(registerform.controls.adminusername.invalid && registerform.controls.adminusername.touched)"
+                        class="text-danger">
+                        <div *ngIf="registerform.controls.adminusername.errors?.required">Name is Required</div>
+                        <div *ngIf="registerform.controls.adminusername.errors?.minlength">Length must be at least 8
+                            characters
+                            long.</div>
+                        <div *ngIf="registerform.controls.adminusername.errors?.maxlength">Length is more than 12 characters
+                            long.
+                        </div>
+                        <div *ngIf="registerform.controls.adminusername.errors?.pattern">Only Alphabets should be Given</div>
+                    </div>
+                </div>
+                <div>
+                    <label>
+                        Admin-Password</label><i class="mr-2 fa fa-pencil"></i><input type="password" formControlName="adminpassword">
+                    <div *ngIf="(registerform.controls.adminpassword.invalid && registerform.controls.adminpassword.touched)"
+                        class="text-danger">
+                        <div *ngIf="registerform.controls.adminpassword.errors?.required">Password is Required</div>
+                        <div *ngIf="registerform.controls.adminpassword.errors?.minlength">Length must be at least 4
+                            characters
+                            long.</div>
+                        <div *ngIf="registerform.controls.adminpassword.errors?.pattern">One UpperCase One LowerCase And One
+                            Number
+                            Should Be Given</div>
+                        <br><br>
+                    </div>
+                </div>
+                <button type="submit" class="w-25 btn btn-danger" [disabled]="registerform.invalid" (click)="adminregister(register)">Admin
+                    Register</button>
+            </div>
+            <br><br><button type="submit" [hidden]="hideadmin1" (click)="openadmin()" class="w-25 btn btn-danger">Admin Registration</button>
+            <button type="submit" (click)="userregister(register)"  class="btn btn-info w-25">User Register</button>
+        </form><br>
+    </div>
+</div>
+</body>
+<router-outlet></router-outlet>
+

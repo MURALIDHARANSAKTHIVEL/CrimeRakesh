@@ -1,0 +1,265 @@
+<ng-template #logoutcontent let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title" style="font-weight:bolder">Logout action</h4>
+        <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p><strong>Are you sure you want to Logout?</strong></p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="logout()">Ok</button>
+    </div>
+</ng-template>
+
+<ng-template #casesdata1 let-modal>
+    <p>No Cases are Assigned to You!!!!....</p>
+</ng-template>
+<ng-template #statusupdate let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">Updated Status Successfully</h4>
+        <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <img src="../assets/images/checked.png" class="h-25 w-25" alt="Correct">
+        <p>Status Successfully Updated</p>
+    </div>
+</ng-template>
+
+<body>
+
+    <header id="s2" class="bg-success">
+
+    </header>
+    <div class="container" style="margin-right:0em; margin-left:0em;">
+        <div class="row">
+
+            <div id="s1" class="col-1">
+                <div id="mySidenav" class="sidenav">
+                    <a class="closebtn" onclick="closeNav()">&times;</a>
+                    <button class="mb-3 mr-5 btn  font-weight-bold text-white" (click)="home()">Home</button><br>
+                    <button class="mb-3 mr-5 btn  font-weight-bold text-white" (click)="openpolicemembers()">Police
+                        Members</button>
+                    <button class="mb-3 mr-5 btn  font-weight-bold text-white" (click)="openassignedcomplaints(casesdata1)">Assigned
+                        Complaints</button>
+                    <button class="mb-3 mt-2 btn font-weight-bold text-white" (click)="wanted()">Most Wanted</button><br>
+                    <button class="mb-3 mt-2 btn font-weight-bold text-white" (click)="missing()">Missing Person</button><br>
+                    <button class="mb-3 mr-5 btn  font-weight-bold text-white" (click)="openfeedbackform()">FeedBack</button><br>
+                    <button class="mb-3 mr-5 btn  font-weight-bold text-white" (click)="logout1(logoutcontent)">Logout</button>
+                </div>
+                <a style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</a>
+            </div>
+
+            <div class="mt-3 col-11">
+                <div [hidden]="hideimage">
+                    <img id="i1" src="/assets/images/tamil1.jpg">
+                    <h4>Awards</h4>
+                    <div class="card-group">
+                        <div class="col-3 card">
+                            <img src="../assets/images/tamil2.jpg" class="card-img-top" alt="Be Safe App">
+                            <div class="card-body">
+                                <h5 class="card-title">Vijaya</h5>
+                                <p id="i5">Fire and Rescue Service</p>
+                                <a href="https://www.outlookindia.com/photos/single/92597">check details here</a>
+                            </div>
+                        </div>
+                        <div class="col-3 card">
+                            <img src="../assets/images/tamil3.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Ramesh Babu</h5>
+                                <p id="i5">Crime Rescue Wing</p>
+                                <a href="https://www.dtnext.in/News/TopNews/2018/03/08033259/1064341/Gear-up-to-fight-cyber-crime-TN-CM-Edappadi-K-Palaniswami-.vpf">check
+                                    details here</a>
+                            </div>
+                        </div>
+                        <div class=" col-3 card">
+                            <img src="../assets/images/tamil4.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Jayant Ramana</h5>
+                                <p id="i5">Best TN Police</p>
+                                <a href="https://www.thehindu.com/news/cities/kozhikode/kaliraj-mahesh-kumar-is-new-city-police-chief/article19051492.ece">check
+                                    details here</a>
+
+                            </div>
+
+                        </div>
+                        <div class=" col-3 card">
+                            <img src="../assets/images/tamil5.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Surya Prasath</h5>
+                                <p id="i5">Head of TN Police</p>
+                                <a href="https://www.dtnext.in/News/TamilNadu/2019/07/01023358/1154362/Tripathy-assumes-charge-as-head-of-TN-police-force.vpf">check
+                                    details here</a>
+                            </div>
+
+                        </div>
+                        <div class=" col-3 card">
+                            <img src="../assets/images/tamil6.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Venkatesh</h5>
+                                <p id="i5">Outstanding devotion of duty</p>
+                                <a href="https://www.livechennai.com/detailnews.asp?catid=&newsid=29304">check details
+                                    here</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div [hidden]="hidecases">
+                        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                    <table class="table table-striped table-active">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>PoliceId</th>
+                            <th>Phone Number</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                        </tr>
+                        <tbody id="myTable">
+                            <tr *ngFor="let data of feedbackdata1">
+                                <td>{{data.id}}</td>
+                                <td>{{data.name}}</td>
+                                <td>{{data.policeid}}</td>
+                                <td>{{data.phonenumber}}</td>
+                                <td>{{data.email}}</td>
+                                <td>{{data.address}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div [hidden]="hidecaseform">
+                    <form [formGroup]="casesform">
+                        <table class="table table-striped table-active">
+                            <tr>
+                                <th>Id</th>
+                                <th>UserName</th>
+                                <th>CulpritName</th>
+                                <th>CaseName</th>
+                                <th>Date</th>
+                                <th>Location</th>
+                                <th>Remarks</th>
+                                <th>Image</th>
+                                <th>Status</th>
+                                <th>Assigned To</th>
+                                <th>Update</th>
+                            </tr>
+                            <tbody>
+                                <tr *ngFor="let data of casesdata">
+                                    <td>{{data.id}}</td>
+                                    <td>{{data.username}}</td>
+                                    <td>{{data.culpritname}}</td>
+                                    <td>{{data.casename}}</td>
+                                    <td>{{data.date}}</td>
+                                    <td>{{data.location}}</td>
+                                    <td>{{data.remarks}}</td>
+                                    <td><img id="i6" [src]="fetchimage(data.image)" /></td>
+                                    <td><input type="text" formControlName="status" value="{{data.status}}" /></td>
+                                    <td>{{data.assignedto}}</td>
+                                    <td><button (click)="updatestatus(data,statusupdate)" class="btn btn-success">Update</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+
+                <!-- missing -->
+                <div [hidden]="hideform2">
+                    <div>
+                        <button type="button" (click)="addmissing()" class="mb-3 font-weight-bold btn btn-success">Add
+                            Missing Members</button>
+                    </div>
+                    <div [hidden]="hidemissingaddform" id="i7">
+                        <form [formGroup]="addmissingform">
+                            <label>Image/Video</label>
+                            <i class="mr-1 fa fa-picture-o"></i>&nbsp;&nbsp;<input type="file" (change)="image($event)"
+                                accept="image/*"><br><br>
+                            <!-- <label>Id</label>
+                            <i class="mr-1 fa fa-id-badge"></i><input type="text" formControlName="id" placeholder="Enter Id"><br><br> -->
+                            <label>User Name</label>
+                            <i class="mr-1 fa fa-user"></i><input type="text" formControlName="name" placeholder="Enter UserName"><br><br>
+                            <label>Contact Number</label>
+                            <i class="mr-1 fa fa-phone"></i><input type="text" formControlName="contactno" placeholder="Enter Contact Number"><br><br>
+                            <button type="button" (click)="addmissingdata(policeassign)" class="btn btn-success">Add
+                                Member</button>
+                            <button type="button" (click)="openmiss()" class="ml-2 btn btn-success">Go Back</button>
+                        </form>
+                    </div>
+                    <table class="table table-striped table-active">
+                        <tr>
+                            <th>Image</th>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Contact Number</th>
+                        </tr>
+                        <tbody>
+                            <tr *ngFor="let i of urlimage2">
+                                <td><img [src]="fetchimage(i.image)" /></td>
+                                <td>{{i.id}}</td>
+                                <td>{{i.name}}</td>
+                                <td>{{i.contactno}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- mostwanted -->
+                <div [hidden]="hidemissing">
+                    <div>
+                        <button type="button" (click)="addwanted()" class="mb-3 font-weight-bold btn btn-success">Add
+                            Most Wanted Members</button>
+                    </div>
+                    <div [hidden]="hidewantedaddform" id="i7">
+                        <form [formGroup]="addwantedform">
+                            <label>Image/Video</label>
+                            <i class="mr-1 fa fa-picture-o"></i><input type="file" (change)="image($event)" accept="image/*"><br><br>
+                            <label>User Name</label>
+                            <i class="mr-1 fa fa-user"></i><input type="text" formControlName="name" placeholder="Enter UserName"><br><br>
+                            <button type="button" (click)="addwanteddata(policeassign)" class="btn btn-success">Add
+                                Member</button>
+                            <button type="button" (click)="openwant()" class="ml-2 btn btn-success">Go Back</button>
+                        </form>
+                    </div>
+                    <table class="table table-striped table-active">
+                        <tr>
+                            <th>Id</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                        </tr>
+                        <tbody>
+                            <tr *ngFor="let i of urlimage1">
+                                <td>{{i.id}}</td>
+                                <td><img [src]="fetchimage(i.image)"></td>
+                                <td>{{i.name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div [hidden]="hidefeedbackform">
+                    <form [formGroup]="feedbackform">
+                        <h2 style="text-align:center; color:#274d8a;">FeedBack Form</h2>
+                        <br><label>UserName</label>
+                        <i class="mr-1 fa fa-user"></i><input type="text" formControlName="username1" [(ngModel)]='username1'><br>
+                        <label>Please Share Your Feedback</label>
+                        <i class="mr-1 fa fa-comment"></i><textarea placeholder="What can we Improve" formControlName="matter"
+                            rows="10" cols="50"></textarea><br>
+                        <input type="text" [hidden]="message" disabled [(ngModel)]='role' formControlName="receivedby"><br><br>
+                        <label> Rate Us</label>
+                        <ngb-rating class="text-success" formControlName="rating" [(rate)]="currentRate"></ngb-rating><br><br>
+                        <button class="btn btn-info" (click)="submitfeedback(feedbackdata)">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

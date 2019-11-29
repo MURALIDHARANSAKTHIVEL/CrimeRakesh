@@ -1,0 +1,85 @@
+<header class="bg-success" id="s1"></header>
+<ng-template #loginfailed let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-title">Invalid Username</h4>
+            <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <img src="../assets/images/x-button.png" class="h-25 w-25" alt="Correct">
+            <p>Invalid Username</p>
+        </div>
+    </ng-template>
+<ng-template #registered let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-title">Updated Successfully</h4>
+            <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <img src="../assets/images/checked.png" class="h-25 w-25" alt="Correct">
+            <p>Successfully Updated</p>
+        </div>
+    </ng-template>
+<div class="container">
+    <div class="row">
+        <div id="s2" class="mt-5 col-6">
+            <form [formGroup]="usernameform">
+                <div>
+                    <div class="radio-toolbar">
+                        <input type="radio" id="radioVisitor" formControlName="role" name="role" value="Visitor"
+                            checked>
+                        <label for="radioVisitor">Visitor</label>
+                        <input type="radio" id="radioAdmin" formControlName="role" name="role" value="Admin">
+                        <label for="radioAdmin">Admin</label>
+                        <input type="radio" id="radioPolice" formControlName="role" name="role" value="Police">
+                        <label for="radioPolice">Police</label>
+                    </div>
+                </div><br><br>
+                <label>UserName:</label><input type="text" formControlName="username">
+                <div *ngIf="(usernameform.controls.username.invalid && usernameform.controls.username.touched)" class="text-danger">
+                    <div *ngIf="usernameform.controls.username.errors?.required">Name is Required</div>
+                    <div *ngIf="usernameform.controls.username.errors?.minlength">Length must be at least 8 characters
+                        long.</div>
+                    <div *ngIf="usernameform.controls.username.errors?.maxlength">Length is more than 12 characters
+                        long.
+                    </div>
+                    <div *ngIf="usernameform.controls.username.errors?.pattern">Only Alphabets should be Given</div>
+                </div>
+                <!-- <button class="btn btn-danger" [hidden]="hidesubmit" (click)="usernamesubmit(loginfailed)">Submit</button> -->
+
+                <div>
+                    <label>Password:</label><input type="password" formControlName="password">
+                    <div *ngIf="(usernameform.controls.password.invalid && usernameform.controls.password.touched)"
+                        class="text-danger">
+                        <div *ngIf="usernameform.controls.password.errors?.required">Password is Required</div>
+                        <div *ngIf="usernameform.controls.password.errors?.minlength">Length must be at least 4
+                            characters
+                            long.</div>
+                        <div *ngIf="usernameform.controls.password.errors?.pattern">One UpperCase One LowerCase And One
+                            Number
+                            Should Be Given</div>
+
+                    </div>
+                    <br>
+                    <label>Re-type Password:</label><input type="password" formControlName="password1">
+                    <div *ngIf="(usernameform.controls.password1.invalid && usernameform.controls.password1.    touched)"
+                        class="text-danger">
+                        <div *ngIf="usernameform.controls.password1.errors?.required">Password is Required</div>
+                        <div *ngIf="usernameform.controls.password1.errors?.minlength">Length must be at least 4
+                            characters
+                            long.</div>
+                        <div *ngIf="usernameform.controls.password1.errors?.pattern">One UpperCase One LowerCase And
+                            One
+                            Number
+                            Should Be Given</div>
+
+                    </div><br>
+                    <button class="btn btn-info" (click)="submitpassword(registered,loginfailed)">Update password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

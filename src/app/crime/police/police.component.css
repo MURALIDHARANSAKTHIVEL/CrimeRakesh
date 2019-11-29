@@ -1,0 +1,104 @@
+#s2{
+    height: 75px;;
+}
+
+#s1{
+    float: left;
+    margin-left: 0;
+   height: max-content;
+   display: inline-block;
+   
+}
+i{
+  color:#274d8a;
+}
+
+label{
+  width:30%;
+  display: inline-block;
+  color:#274d8a;
+  font-weight: bold;
+}
+
+#i1{
+    width: 500px;
+    height: 350px;
+    margin-left: 250px;
+}
+
+
+table tr td,th {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+
+
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    background-color:slategray;
+    overflow-x: hidden;
+    transition: 0.2s;
+    padding-top: 50px;
+  }
+  
+  .sidenav a {
+    padding: 0 8px 8px 32px;
+    font-size: 25px;
+    color: white;
+    display: block;
+  }
+  
+  .sidenav button:hover {
+    color: green;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  #i4{
+    height:20px;
+    width: 20px;
+}
+  .carousel-item img{
+    height: 550px;
+    width: 100%;
+    margin :0 auto;
+  }
+
+  body{
+    height: 100vh;
+  }
+
+  #i6{
+    height: 100px;
+    width: 100px;
+}
+#i7{
+  border:2px solid;
+  margin: 20px;
+  background-color: azure;
+  padding: 20px;
+}
+.img-fluid{
+  height: auto;
+  max-width: 100%;
+}
+ngb-rating{
+  font-size: 25px;
+}
+  

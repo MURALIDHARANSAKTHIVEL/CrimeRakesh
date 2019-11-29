@@ -1,0 +1,39 @@
+#s1{
+    height:450px;
+ background-size:100% 100%;
+ background-repeat: no-repeat;
+
+}
+#i1{
+    padding-top: 100px;
+}
+
+#s2{
+   color: white;
+    text-align: center; 
+    padding-top: 0px;
+    font-size: 100px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+#s2:hover{
+    color: red;
+}
+
+#s3{
+    margin-top: 50px;
+   float: right;
+   margin-right: 400px;
+   width:20%;
+}
+
+#s4{
+    margin-top: 50px;   
+    margin-left: 400px;
+    width:20%;   
+}
+
+#s5{
+    height:75px;
+
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<ng-template #loginfailed let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">Login Failed!!!</h4>
+        <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <img src="../assets/images/x-button.png"  class="h-25 w-25" alt="Correct"><br><br>
+        <p class="text-danger">UserName Or Password is Incorrect</p>
+        <p class="text-danger">{{message.error.details[0]}}</p>
+    </div>
+</ng-template>
+
+<body>
+    <div class="container" style="margin-right:0em; margin-left:0em;">
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-title" id="s3">Login Form</h4>
+            <button type="button" class="close" aria-describedby="modal-title" (click)="dialogservice.dismissAll('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="col-6 mb-5 mt-5 " style="margin:auto"><br><br>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+
+            <form [formGroup]="loginform" (ngSubmit)="onLoginSubmit(loginfailed)">
+                <div class="radio-toolbar" >
+                    <!-- <div class="btn-group btn-group-toggle">
+                        <label class="btn btn-success   text-white">
+                            <input type="radio" formControlName="role" value="Admin">Admin</label>
+                        <label class="ml-2 btn btn-success text-white">
+                            <input type="radio" formControlName="role" value="Visitor">Visitor</label>
+                        <label class="ml-2 btn btn-success text-white">
+                            <input type="radio" formControlName="role" value="Police">Police</label>
+                    </div> -->
+                    <div class="radio-toolbar">
+                        <input type="radio" id="radioVisitor" formControlName="role" name="role" value="Visitor" checked>
+                        <label for="radioVisitor">Visitor</label>
+                        <input type="radio" id="radioAdmin" formControlName="role" name="role" value="Admin">
+                        <label for="radioAdmin">Admin</label>            
+                        <input type="radio" id="radioPolice" formControlName="role" name="role" value="Police">
+                        <label for="radioPolice">Police</label> 
+                    </div>
+                </div>
+                <br><br>
+                <div>
+                    <label>User Name</label><i class="mr-2 fa fa-user"></i><input type="text" formControlName="username">
+                    <div *ngIf="(loginform.controls.username.invalid && loginform.controls.username.touched)" class="text-danger">
+                        <div *ngIf="loginform.controls.username.errors?.required">Name is Required</div>
+                        <div *ngIf="loginform.controls.username.errors?.minlength">Length must be at least 8 characters
+                            long.</div>
+                        <div *ngIf="loginform.controls.username.errors?.maxlength">Length is more than 12 characters
+                            long.
+                        </div>
+                        <div *ngIf="loginform.controls.username.errors?.pattern">Only Alphabets should be Given</div>
+                    </div>
+                </div><br><br>
+                <div>
+                    <label>
+                        Password</label><i class="mr-2 fa fa-pencil"></i><input type="password" formControlName="password">
+                    <div *ngIf="(loginform.controls.password.invalid && loginform.controls.password.touched)" class="text-danger">
+                        <div *ngIf="loginform.controls.password.errors?.required">Password is Required</div>
+                        <div *ngIf="loginform.controls.password.errors?.minlength">Length must be at least 4 characters
+                            long.</div>
+                        <div *ngIf="loginform.controls.password.errors?.pattern">One UpperCase One LowerCase And One
+                            Number
+                            Should Be Given</div>
+
+                    </div>
+                </div><br>
+                <a [routerLink]="['forgot']" (click)="gotoforgot()">forgot password?</a><br><br>
+                <button type="submit" [disabled]="loginform.invalid" class="btn btn-info">Login</button>
+                <button type="button" class="ml-4 btn btn-success" (click)="gotoregister()">Register</button>
+            </form><br>
+        </div>
+    </div>
+</body>

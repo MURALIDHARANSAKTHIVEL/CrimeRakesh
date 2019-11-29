@@ -1,0 +1,38 @@
+label{
+    width:30%;
+    display: inline-block;
+    color:#274d8a;
+    font-weight: bold;
+}
+
+#s3{
+    color:#274d8a;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    border-bottom: 2px solid #274d8a;
+    width: 270px;
+    margin-left: 400px;
+}
+
+
+.container{
+    background-color: azure;   
+}
+
+#s4{
+    height: 75px;;
+}
+
+#i4{
+    height:20px;
+    width: 20px;
+}
+#s5{
+    color:#274d8a;
+}
+i{
+    color:#274d8a;
+}
+input.ng-touched.ng-invalid {
+    border-color:red;
+}
